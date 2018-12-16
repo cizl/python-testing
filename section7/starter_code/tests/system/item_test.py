@@ -37,6 +37,7 @@ class ItemTest(BaseTest):
                 StoreModel('test').save_to_db()
                 ItemModel('test', 19.99, 1).save_to_db()
                 resp = client.get('/item/test', headers={'Authorization': self.access_token})
+                print(resp)
                 self.assertEqual(resp.status_code, 200)
 
     def test_delete_item(self):
